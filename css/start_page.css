@@ -8,10 +8,9 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-
 .home-content {
   justify-content: space-between;
+  box-shadow: 1em 1em 1em 1em rgba(0, 0, 0, 0.1);
 }
 
 .home-content>.profile {
