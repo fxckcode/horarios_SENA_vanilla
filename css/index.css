@@ -101,8 +101,12 @@ form > a {
     text-decoration: none;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
     .card {
         padding: 25px;
+    }
+
+    .user-login > i {
+        display: none;
     }
 }
