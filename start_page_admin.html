@@ -96,11 +96,25 @@
                 </ul>
             </li>
             <li>
+                <div class="log-out">
+                    <a href="#">
+                        <a href="index.html">
+                            <i class='bx bx-log-out'></i>
+                        </a>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
                 <div class="profile-details">
                     <div class="name-job">
                         <a href="./index.html" class="profile_name">Cerrar sesión</a>
                     </div>
-                    <i class='bx bx-log-out'></i>
+                    <a href="index.html">
+                        <i class='bx bx-log-out'></i>
+                    </a>
                 </div>
             </li>
         </ul>
@@ -131,6 +145,7 @@
         };
         sidebarBtn.addEventListener("click", () => {
             sidebar.classList.toggle("close");
+            profile_name.innerHTML = ""
         });
     </script>
 </body>
