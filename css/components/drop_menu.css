@@ -78,6 +78,10 @@
     text-decoration: none;
 }
 
+.general {
+    background: #1d1b31;
+}
+
 .sidebar .nav-links li a .link_name {
     font-size: 16px;
     font-weight: 400;
