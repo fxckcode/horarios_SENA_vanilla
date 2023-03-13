@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/components/drop_menu.css">
     <link rel="stylesheet" href="../css/start_page.css">
+    <link rel="stylesheet" href="../css/fichas_pages.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <title>Gestion de fichas</title>
 </head>
 <body>
@@ -111,7 +113,7 @@
             <li>
                 <div class="profile-details">
                     <div class="name-job">
-                        <a href="./index.html" class="profile_name">Cerrar sesión</a>
+                        <a href="../index.html" class="profile_name">Cerrar sesión</a>
                     </div>
                     <a href="index.html">
                         <i class='bx bx-log-out'></i>
@@ -130,20 +132,123 @@
                 <i class="fa-solid fa-chevron-up"></i>
             </div>
         </div>
+        <div class="content">
+            <div class="title">
+                <h1>Gestionar Ficha</h1>
+            </div>
+            <div class="content-container">
+                <div class="btn-new">
+                    <button id="new-ficha">Nueva Ficha</button>
+                </div>
+                <table class="ficha" id="example">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre ficha</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miercoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Horas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2692929</td>
+                            <td>ADSO</td>
+                            <td>Feb. 2023</td>
+                            <td>Marzo. 2025</td>
+                            <td>hkjhkh</td>
+                            <td>da</td>
+                            <td>sdad</td>
+                            <td>dasda</td>
+                            <td>dada</td>
+                            <td>30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-contents">
+                <div class="modal-title">
+                    <h2>Crear ficha</h2>
+                </div>
+                <form action="">
+                    <div class="form-content">
+                        <label for="">Código</label>
+                        <input type="number" placeholder="ID Ficha">
+                    </div>
+                    <div class="form-content">
+                        <label for="">Programa</label>
+                        <select name="" id="">
+                            <option value="">Selecciónar nombre del programa</option>
+                        </select>
+                    </div>
+                    <div class="form-content">
+                        <label for="">Fecha. Inicio</label>
+                        <input type="date">
+                    </div>                    
+                    <div class="form-content">
+                        <label for="">Fecha. Fin</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-content">
+                        <label for="">Sede</label>
+                        <select name="" id="">
+                            <option value="">Selecciónar sede</option>
+                            <option value="">Comercio y Servicios</option>
+                            <option value="">Yamboró</option>
+                        </select>
+                    </div>
+                    <div class="btn-new-ficha">
+                        <button>Crear ficha</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script>
-        let arrow = document.querySelectorAll(".arrow");
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        for (var i = 0; i < arrow.length; i++) {
-            arrow[i].addEventListener("click", (e) => {
-                let arrowParent = e.target.parentElement.parentElement;
-                arrowParent.classList.toggle("showMenu");
+
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("new-ficha");
+        var span = document.getElementsByClassName("close")[0];
+        var sidebar = document.querySelector(".sidebar");
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("close");  
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+            if (!sidebar.classList.toggle("close")) {
+                sidebar.classList.remove("close")
+            } else {
+                sidebar.classList.toggle("close")
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
             });
-        };
-        sidebarBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-            profile_name.innerHTML = ""
         });
     </script>
 </body>
