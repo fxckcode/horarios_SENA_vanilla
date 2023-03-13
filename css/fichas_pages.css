@@ -7,6 +7,7 @@
 .title {
     width: max-content;
     color: #027d02;
+    font-size: 1.2em;
 }
 
 .content-container {
@@ -29,6 +30,7 @@
     color: white;
     border-style: none;
     border-radius: 10px;
+    font-size: 1em;
 }
 
 .ficha {
@@ -49,7 +51,7 @@
   }
   
 .modal-content {
-    background-color: #fefefe;
+    background-color: white;
     margin: 15% auto;
     border-radius: 10px;
     padding: 20px;
