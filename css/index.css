@@ -51,6 +51,7 @@ nav {
 form {
     display: flex;
     flex-direction: column;
+    width: 300px;
     gap: 10px;
 }
 
@@ -65,9 +66,16 @@ form > label {
     color: white;
 }
 
+.user-login {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
 
 #usuario, #password {
-    padding: 10px;
+    width: 100%;
+    padding: 10px 15px;
     border-style: none;
     border-radius: 5px;
     background-color: #e0e0e0;
@@ -108,5 +116,9 @@ form > a {
 
     .user-login > i {
         display: none;
+    }
+
+    form {
+        width: 250px;
     }
 }
