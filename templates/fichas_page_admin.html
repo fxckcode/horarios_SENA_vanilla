@@ -226,17 +226,17 @@
         var sidebar = document.querySelector(".sidebar");
 
         btn.onclick = function() {
-            sidebar.classList.toggle("close");  
+            if (sidebar.classList.remove("close")) {
+                sidebar.classList.toggle("close")
+            } else {
+                sidebar.classList.toggle("close")
+            }
             modal.style.display = "block";
         }
 
         span.onclick = function() {
             modal.style.display = "none";
-            if (!sidebar.classList.toggle("close")) {
-                sidebar.classList.remove("close")
-            } else {
-                sidebar.classList.toggle("close")
-            }
+            sidebar.classList.remove("close");
         }
 
         window.onclick = function(event) {
