@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/components/drop_menu.css">
-    <link rel="stylesheet" href="../css/start_page.css">
-    <link rel="stylesheet" href="../css/fichas_pages.css">
+    <link rel="stylesheet" href="./css/components/drop_menu.css">
+    <link rel="stylesheet" href="./css/components/navbar.css">
+    <link rel="stylesheet" href="./css/ficha_page.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
@@ -15,16 +15,16 @@
 <body>
     <div class="sidebar close">
         <div class="logo-details">
-            <img src="../public/logo_white.png" alt="" width="60" height="60">
+            <img src="./public/logo_white.png" alt="" width="60" height="60">
         </div>
         <ul class="nav-links">
             <li>
-                <a href="../start_page_admin.html">
+                <a href="./start_page_admin.html">
                     <i class='bx bx-grid-alt' ></i>
                     <span class="link_name">General</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="../start_page_admin.html">General</a></li>
+                    <li><a class="link_name" href="./start_page_admin.html">General</a></li>
                 </ul>
             </li>
             <li><hr class="solid"></li>
@@ -106,14 +106,14 @@
                         </a>
                     </a>
                     <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">Cerrar Sesión</a></li>
+                        <li><a class="link_name" href="index.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </li>
             <li>
                 <div class="profile-details">
                     <div class="name-job">
-                        <a href="../index.html" class="profile_name">Cerrar sesión</a>
+                        <a href="./index.html" class="profile_name">Cerrar sesión</a>
                     </div>
                     <a href="index.html">
                         <i class='bx bx-log-out'></i>
@@ -123,7 +123,7 @@
         </ul>
     </div>
     <section class="home-section">
-        <div class="home-content">
+        <nav class="home-content">
             <i class='bx bx-menu'></i>
             <div class="profile">
                 <i class="fa-solid fa-bell"></i>
@@ -131,7 +131,7 @@
                 <p>Nombre de usuario</p>
                 <i class="fa-solid fa-chevron-up"></i>
             </div>
-        </div>
+        </nav>
         <div class="content">
             <div class="title">
                 <h1>Gestionar Ficha</h1>
@@ -140,7 +140,7 @@
                 <div class="btn-new">
                     <button id="new-ficha">Nueva Ficha</button>
                 </div>
-                <table class="ficha" id="example">
+                <table class="ficha-table" id="ficha-table">
                     <thead>
                         <tr>
                             <th>Código</th>
@@ -170,8 +170,8 @@
                             <td>30</td>
                             <td>
                                 <div class="btn-new">
-                                    <button id="new-ficha">Nueva Ficha</button>
-                                </div>
+                                    <button id="edit-ficha">Editar</button>   
+                                </div>    
                             </td>
                         </tr>
                     </tbody>
@@ -221,17 +221,27 @@
             </div>
         </div>
     </div>
-    <script src="../js/index.js"></script>
+    <script src="./js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script>
 
         var modal = document.getElementById("myModal");
         var btn = document.getElementById("new-ficha");
+        var edit = document.getElementById("edit-ficha");
         var span = document.getElementsByClassName("close")[0];
         var sidebar = document.querySelector(".sidebar");
 
         btn.onclick = function() {
+            if (sidebar.classList.remove("close")) {
+                sidebar.classList.toggle("close")
+            } else {
+                sidebar.classList.toggle("close")
+            }
+            modal.style.display = "block";
+        }
+
+        edit.onclick = function() {
             if (sidebar.classList.remove("close")) {
                 sidebar.classList.toggle("close")
             } else {
@@ -252,7 +262,7 @@
         }
 
         $(document).ready(function () {
-            $('#example').DataTable({
+            $('#ficha-table').DataTable({
                 responsive: true
             });
         });

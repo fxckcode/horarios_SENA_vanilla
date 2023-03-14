@@ -8,26 +8,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.home-content {
-  justify-content: space-between;
-  box-shadow: 1em 1em 1em 1em rgba(0, 0, 0, 0.1);
-}
-
-.home-content > .profile {
-  width: auto;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  padding: 0 20px 0 0;
-}
-
-.home-content> .profile >i {
-  font-size: 1.2em;
-}
-
 .content {
     width: 100%;
     height: 90%;
