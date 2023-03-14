@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/components/drop_menu.css">
     <link rel="stylesheet" href="./css/components/navbar.css">
-    <link rel="stylesheet" href="./css/ficha_page.css">
     <link rel="stylesheet" href="./css/components/modal.css">
+    <link rel="stylesheet" href="./css/ambientes_page.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
@@ -29,26 +29,26 @@
                 </ul>
             </li>
             <li><hr class="solid"></li>
-            <li class="general">
+            <li>
                 <div class="iocn-link">
-                    <a href="#">
+                    <a href="./fichas_page_admin.html">
                         <i class='bx bx-collection' ></i>
                         <span class="link_name">Gestionar ficha</span>
                     </a>
                 </div>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Gestinar ficha</a></li>
+                    <li><a class="link_name" href="./fichas_page_admin.html">Gestinar ficha</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="general">
                 <div class="iocn-link">
-                    <a href="./ambientes_page_admin.html">
+                    <a href="#">
                         <i class='bx bx-book-alt'></i>
                         <span class="link_name">Gestionar ambientes</span>
                     </a>
                 </div>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="./ambientes_page_admin.html">Gestionar ambientes</a></li>
+                    <li><a class="link_name" href="#">Gestionar ambientes</a></li>
                 </ul>
             </li>
             <li>
@@ -135,19 +135,16 @@
         </nav>
         <div class="content">
             <div class="title">
-                <h1>Gestionar Ficha</h1>
+                <h1>Gestionar Ambientes</h1>
             </div>
             <div class="content-container">
                 <div class="btn-new">
-                    <button id="new-ficha">Nueva Ficha</button>
+                    <button id="new-ambiente">Nueva Ambiente</button>
                 </div>
                 <table class="ficha-table" id="ficha-table">
                     <thead>
                         <tr>
-                            <th>Código</th>
-                            <th>Nombre ficha</th>
-                            <th>Fecha Inicio</th>
-                            <th>Fecha Fin</th>
+                            <th>Ambiente</th>
                             <th>Lunes</th>
                             <th>Martes</th>
                             <th>Miercoles</th>
@@ -159,19 +156,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>269292932132131</td>
-                            <td>ADSO</td>
-                            <td>Feb. 2023</td>
-                            <td>Marzo. 2025</td>
                             <td>hkjhkh</td>
                             <td>da</td>
                             <td>sdad</td>
                             <td>dasda</td>
                             <td>dada</td>
+                            <td>dasdad</td>
                             <td>30</td>
                             <td>
                                 <div class="btn-new">
-                                    <button id="edit-ficha">Editar</button>   
+                                    <button id="edit-ambiente">Editar</button>   
                                 </div>    
                             </td>
                         </tr>
@@ -186,26 +180,18 @@
             <span class="close">&times;</span>
             <div class="modal-contents">
                 <div class="modal-title">
-                    <h2>Crear ficha</h2>
+                    <h2>Crear Ambiente</h2>
                 </div>
                 <form action="">
                     <div class="form-content">
-                        <label for="">Código</label>
-                        <input type="number" placeholder="ID Ficha">
+                        <label for="">Nombre</label>
+                        <input type="text" placeholder="Nombre del ambiente">
                     </div>
                     <div class="form-content">
-                        <label for="">Programa</label>
+                        <label for="">Municipio</label>
                         <select name="" id="">
-                            <option value="">Selecciónar nombre del programa</option>
+                            <option value="">Selecciónar el Municipio</option>
                         </select>
-                    </div>
-                    <div class="form-content">
-                        <label for="">Fecha. Inicio</label>
-                        <input type="date">
-                    </div>                    
-                    <div class="form-content">
-                        <label for="">Fecha. Fin</label>
-                        <input type="date">
                     </div>
                     <div class="form-content">
                         <label for="">Sede</label>
@@ -215,7 +201,15 @@
                             <option value="">Yamboró</option>
                         </select>
                     </div>
-                    <div class="btn-new-ficha">
+                    <div class="form-content">
+                        <label for="">Estado</label>
+                        <select name="" id="">
+                            <option value="">Seleccionar estado del ambiente</option>
+                            <option value="">Funcional</option>
+                            <option value="">No funcional</option>
+                        </select>
+                    </div>
+                    <div class="btn-new-ambiente">
                         <button>Crear ficha</button>
                     </div>
                 </form>
@@ -228,8 +222,8 @@
     <script>
 
         var modal = document.getElementById("myModal");
-        var btn = document.getElementById("new-ficha");
-        var edit = document.getElementById("edit-ficha");
+        var btn = document.getElementById("new-ambiente");
+        var edit = document.getElementById("edit-ambiente");
         var span = document.getElementsByClassName("close")[0];
         var sidebar = document.querySelector(".sidebar");
 

@@ -38,8 +38,8 @@
     align-items: start;
 }
 
-.btn-new > #new-ficha, 
-.btn-new > #edit-ficha {
+.btn-new > #new-ambiente, 
+.btn-new > #edit-ambiente {
     padding: 10px;
     background-color: #027d02;
     color: white;
