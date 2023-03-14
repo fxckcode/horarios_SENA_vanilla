@@ -84,3 +84,11 @@ input::placeholder, select::placeholder {
     border-style: none;
     border-radius: 10px;
 }
+
+.btn-new-horario > button {
+    padding: 10px 20px;
+    background-color: #027d02;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+}
