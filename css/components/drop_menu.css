@@ -51,16 +51,6 @@
     margin: auto;
 }
 
-.sidebar .nav-links li .iocn-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.sidebar.close .nav-links li .iocn-link {
-    display: block
-}
-
 .sidebar .nav-links li i {
     height: 50px;
     min-width: 78px;
