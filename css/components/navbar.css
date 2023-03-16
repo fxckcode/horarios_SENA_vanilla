@@ -1,5 +1,5 @@
 .home-content {
-    justify-content: space-between;
+    justify-content: end;
     box-shadow: 1em 1em 1em 1em rgba(0, 0, 0, 0.1);
 }
   
@@ -16,4 +16,10 @@
   
 .home-content> .profile >i {
     font-size: 1.2em;
+}
+
+@media (max-width: 426px) {
+    .home-content {
+        justify-content: space-between;
+    }
 }
