@@ -222,7 +222,7 @@
 }
 
 .log-out {
-    display: none;
+    display: inline;
 }
 
 @media (max-width: 400px) {
