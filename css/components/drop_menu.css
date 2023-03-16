@@ -42,7 +42,7 @@
 }
 
 .sidebar .nav-links li:hover {
-    background: #1d1b31;
+    background: #014e01;
 }
 
 .solid {
@@ -69,7 +69,7 @@
 }
 
 .general {
-    background: #1d1b31;
+    background: #014e01;
 }
 
 .sidebar .nav-links li a .link_name {
@@ -87,7 +87,7 @@
 .sidebar .nav-links li .sub-menu {
     padding: 6px 6px 14px 80px;
     margin-top: -10px;
-    background: #1d1b31;
+    background: #014e01;
     display: none;
 }
 
@@ -174,7 +174,7 @@
 .home-section .home-content .bx-menu {
     margin: 0 15px;
     cursor: pointer;
-    color: #11101d;
+    color:#014e01;
     font-size: 35px;
 }
 
