@@ -29,11 +29,11 @@
             </li>
             <li><hr class="solid"></li>
             <li>
-                <a href="#">
+                <a href="./fichas_page_admin.html">
                     <i class='bx bx-collection' ></i>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Gestinar ficha</a></li>
+                    <li><a class="link_name" href="./fichas_page_admin.html">Gestinar ficha</a></li>
                 </ul>
             </li>
             <li>
@@ -155,7 +155,7 @@
     <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="cerrar">&times;</span>
             <div class="modal-contents">
                 <div class="modal-title">
                     <h2>Crear ficha</h2>
@@ -216,7 +216,7 @@
         var modal = document.getElementById("myModal");
         var btn = document.getElementById("new-horario");
         var edit = document.getElementById("edit-horario");
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementsByClassName("cerrar")[0];
         var sidebar = document.querySelector(".sidebar");
 
         btn.onclick = function() {
@@ -237,7 +237,10 @@
             modal.style.display = "block";
         }
 
-  
+        span.onclick = () => {
+            modal.style.display = "none";
+        }
+
 
         window.onclick = function(event) {
             if (event.target == modal) {
